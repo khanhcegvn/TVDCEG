@@ -1,0 +1,938 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7B2B61AF-2E50-4AB7-B77E-A75B06A61B06}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>TVDCEG</RootNamespace>
+    <AssemblyName>TVDCEG</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MaterialDesignColors, Version=1.2.6.1513, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignColors.1.2.6\lib\net45\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=3.1.3.1513, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignThemes.3.1.3\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RevitAPI">
+      <HintPath>C:\Program Files\Autodesk\Revit 2019\RevitAPI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="RevitAPIUI">
+      <HintPath>C:\Program Files\Autodesk\Revit 2019\RevitAPIUI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Threading.Tasks" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CEG_INFOR\CegPartTracker.cs" />
+    <Compile Include="CEG_INFOR\CEG_Element.cs" />
+    <Compile Include="CEG_INFOR\CEG_Product.cs" />
+    <Compile Include="ExtensionTool\Ex.05.02.Checkdetailnamewithconection.cs" />
+    <Compile Include="ExtensionTool\Ex.05.03.FrmCheckdetailnamewithconection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExtensionTool\Ex.05.03.FrmCheckdetailnamewithconection.Designer.cs">
+      <DependentUpon>Ex.05.03.FrmCheckdetailnamewithconection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Extension\CegParameterInfo.cs" />
+    <Compile Include="Extension\CegParameterSet.cs" />
+    <Compile Include="Extension\CegTitleBlockParameter.cs" />
+    <Compile Include="Extension\FixduplicateControlNumbercmd.cs" />
+    <Compile Include="ExtensionTool\Ex.05.01.Checkdetailnamewithconectioncmd.cs" />
+    <Compile Include="ExtensionTool\Ex.04.01.Addvalueparametercmd.cs" />
+    <Compile Include="ExtensionTool\Ex.04.02.FrmAddvalueParameter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExtensionTool\Ex.04.02.FrmAddvalueParameter.Designer.cs">
+      <DependentUpon>Ex.04.02.FrmAddvalueParameter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TVD.60.03.FrmCheckpartdraw.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TVD.60.03.FrmCheckpartdraw.Designer.cs">
+      <DependentUpon>TVD.60.03.FrmCheckpartdraw.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TVD.60.02.Checkpartdraw.cs" />
+    <Compile Include="TVD.60.01.Checkpartdrawcmd.cs" />
+    <Compile Include="TVD.57.05.FrmIncrease.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TVD.57.05.FrmIncrease.Designer.cs">
+      <DependentUpon>TVD.57.05.FrmIncrease.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TVD.58.02.FrmCheckElementWorkshare.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TVD.58.02.FrmCheckElementWorkshare.Designer.cs">
+      <DependentUpon>TVD.58.02.FrmCheckElementWorkshare.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TVD.58.01.CheckElementWorkshareCmd.cs" />
+    <Compile Include="TVD.57.04.CheckControlNumberEvent.cs" />
+    <Compile Include="TVD.57.03.FrmCheckControlNumber.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TVD.57.03.FrmCheckControlNumber.Designer.cs">
+      <DependentUpon>TVD.57.03.FrmCheckControlNumber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TVD.27.03.FrmCutvoidbytypes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TVD.27.03.FrmCutvoidbytypes.Designer.cs">
+      <DependentUpon>TVD.27.03.FrmCutvoidbytypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TVD.57.02.CheckControlNumber.cs" />
+    <Compile Include="TVD.57.01.CheckControlNumberCmd.cs" />
+    <Compile Include="TVD.56.01.EraseProductHostCmd.cs" />
+    <Compile Include="TVD.55.03.FrmAlignRebar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TVD.55.03.FrmAlignRebar.Designer.cs">
+      <DependentUpon>TVD.55.03.FrmAlignRebar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExtensionTool\Ex.03.01.TransferProductcodecmd.cs" />
+    <Compile Include="ExtensionTool\Ex.01.02.FrmTransferValueParameter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExtensionTool\Ex.01.02.FrmTransferValueParameter.Designer.cs">
+      <DependentUpon>Ex.01.02.FrmTransferValueParameter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExtensionTool\Ex.01.01.TransferValueParametercmd.cs" />
+    <Compile Include="TVD.55.02.AlignRebarEdge.cs" />
+    <Compile Include="TVD.55.01.AlignRebarEdgeCmd.cs" />
+    <Compile Include="TVD.54.02.AddSuffixControlMarkErection.cs" />
+    <Compile Include="TVD.54.01.AddSuffixControlMarkErectionCmd.cs" />
+    <Compile Include="TVD.53.03.FrmSetValueTemplateSheet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TVD.53.03.FrmSetValueTemplateSheet.Designer.cs">
+      <DependentUpon>TVD.53.03.FrmSetValueTemplateSheet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExtensionTool\Ex.02.01.DataSource.cs" />
+    <Compile Include="ExtensionTool\Ex.02.02.FindSheet.cs" />
+    <Compile Include="ExtensionTool\Ex.02.03.frmFindSheetContainLegend.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExtensionTool\Ex.02.03.frmFindSheetContainLegend.designer.cs">
+      <DependentUpon>Ex.02.03.frmFindSheetContainLegend.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TVD.53.02.SetValueTemplateSheet.cs" />
+    <Compile Include="TVD.53.01.SetValueTemplateSheetCmd.cs" />
+    <Compile Include="TVD.52.01.CalloutValuedimCmd.cs" />
+    <Compile Include="TVD.51.02.CreateGrid3dview.cs" />
+    <Compile Include="TVD.51.01.CreateGrid3dviewCmd.cs" />
+    <Compile Include="TVD.50.01.SelectElementsinRowCmd.cs" />
+    <Compile Include="TVD.49.02.FrmFilterCustom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TVD.49.02.FrmFilterCustom.Designer.cs">
+      <DependentUpon>TVD.49.02.FrmFilterCustom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TVD.49.01.SelectCustomCmd.cs" />
+    <Compile Include="TVD.48.01.RebarSymbolCreatorCmd.cs" />
+    <Compile Include="TVD.48.02.RebarSymbolCreatorController.cs" />
+    <Compile Include="TVD.47.05.ManagerSectionEvent.cs" />
+    <Compile Include="TVD.47.04.FrmSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TVD.47.04.FrmSetting.Designer.cs">
+      <DependentUpon>TVD.47.04.FrmSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TVD.47.03.FrmManagerSection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TVD.47.03.FrmManagerSection.Designer.cs">
+      <DependentUpon>TVD.47.03.FrmManagerSection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Selection tool\Selectbrickcmd.cs" />
+    <Compile Include="T.CopyConnectionSamegeometrycmd.cs" />
+    <Compile Include="TVD.44.02.FrmAddvalueonsheet.xaml.cs">
+      <DependentUpon>TVD.44.02.FrmAddvalueonsheet.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TVD.47.02.ManagerSection.cs" />
+    <Compile Include="TVD.47.01.ManagerSectioncmd.cs" />
+    <Compile Include="TVD.46.01.Addvalueonsheetcmd.cs" />
+    <Compile Include="TVD.45.01.RebarSymbolcmd.cs" />
+    <Compile Include="TVD.44.02.FrmMathGridView.xaml.cs">
+      <DependentUpon>TVD.44.02.FrmMathGridView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TVD.44.01.MathGridViewcmd.cs" />
+    <Compile Include="TVD.43.02.FrmTopDT.xaml.cs">
+      <DependentUpon>TVD.43.02.FrmTopDT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TVD.43.01.TopDTcmd.cs" />
+    <Compile Include="TVD.42.01.CalloutDimcmd.cs" />
+    <Compile Include="TVD.41.04.HideElementbyworkplaneandlevelEvent.cs" />
+    <Compile Include="TVD.41.03.FrmHideElementbyworkplaneandlevel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TVD.41.03.FrmHideElementbyworkplaneandlevel.Designer.cs">
+      <DependentUpon>TVD.41.03.FrmHideElementbyworkplaneandlevel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="legendmanager\DoubleTeeInfo.cs" />
+    <Compile Include="legendmanager\DoubleTeeWarpCmd.cs" />
+    <Compile Include="legendmanager\DoubleTeeWarpController.cs" />
+    <Compile Include="legendmanager\LegendExtension.cs" />
+    <Compile Include="legendmanager\LegendManager.cs" />
+    <Compile Include="legendmanager\LegendManagerCmd.cs" />
+    <Compile Include="legendmanager\LegendManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="legendmanager\LegendManagerForm.designer.cs">
+      <DependentUpon>LegendManagerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="legendmanager\TeeWarpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="legendmanager\TeeWarpForm.designer.cs">
+      <DependentUpon>TeeWarpForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TVD.41.02.HideElementbyworkplaneandlevel.cs" />
+    <Compile Include="TVD.41.01.HideElementbyworkplaneandlevelcmd.cs" />
+    <Compile Include="TVD.40.01.Copyvaluedimesioncmd.cs" />
+    <Compile Include="TVD.39.01.Rotetatextcmd.cs" />
+    <Compile Include="TVD.38.02.FrmOpenmultisheet.xaml.cs">
+      <DependentUpon>TVD.38.02.FrmOpenmultisheet.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TVD.38.01.Openmultisheetcmd.cs" />
+    <Compile Include="TVD.37.02.FrmTransferviewtemplate.xaml.cs">
+      <DependentUpon>TVD.37.02.FrmTransferviewtemplate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TVD.37.01.Transferviewtemplatecmd.cs" />
+    <Compile Include="TVD.36.01.SetOrienViewcmd.cs" />
+    <Compile Include="TVD.35.01.StrandVisibilitycmd.cs" />
+    <Compile Include="TVD.34.01.SwitchSectionboxcmd.cs" />
+    <Compile Include="TVD.33.02.Gridandlevelbuble.cs" />
+    <Compile Include="TVD.33.03.FrmGridandlevelbuble.xaml.cs">
+      <DependentUpon>TVD.33.03.FrmGridandlevelbuble.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TVD.33.01.Gridandlevelbublecmd.cs" />
+    <Compile Include="TVD.32.02.FrmAddValueAssembly.xaml.cs">
+      <DependentUpon>TVD.32.02.FrmAddValueAssembly.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TVD.32.01.CaculatorAssemblycmd.cs" />
+    <Compile Include="TVD.31.03.FrmProductonlevel.xaml.cs">
+      <DependentUpon>TVD.31.03.FrmProductonlevel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CopyView.cs" />
+    <Compile Include="AddViewsToSheetCmd.cs" />
+    <Compile Include="AddViewsToSheetForm.xaml.cs">
+      <DependentUpon>AddViewsToSheetForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="App.cs" />
+    <Compile Include="TVD.31.01.ProductonLevel.cs" />
+    <Compile Include="TVD.31.01.ProductonLevelcmd.cs" />
+    <Compile Include="TVD.30.03.FrmCutVoidConnection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TVD.30.03.FrmCutVoidConnection.Designer.cs">
+      <DependentUpon>TVD.30.03.FrmCutVoidConnection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TVD.24.04.FrmMathDoubleTeeEvent.cs" />
+    <Compile Include="TVD.30.02.CutVoidConnection.cs" />
+    <Compile Include="TVD.30.01.CutVoidConnectioncmd.cs" />
+    <Compile Include="TVD.29.01.FindGavitycmd.cs" />
+    <Compile Include="TVD.28.01.MathViewTeamplatecmd.cs" />
+    <Compile Include="TVD.27.02.CutVoidByTypes.cs" />
+    <Compile Include="TVD.27.01.CutVoidByTypescmd.cs" />
+    <Compile Include="TVD.26.03.FrmExportRebar.xaml.cs">
+      <DependentUpon>TVD.26.03.FrmExportRebar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TVD.26.01.ExportRebarSchedulecmd.cs" />
+    <Compile Include="TVD.26.02.ExportRebarSchedule.cs" />
+    <Compile Include="TVD.25.03.FrmSelectTextinView.xaml.cs">
+      <DependentUpon>TVD.25.03.FrmSelectTextinView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TVD.25.02.SelectTextInview.cs" />
+    <Compile Include="TVD.25.01.SelectTextInviewcmd.cs" />
+    <Compile Include="TVD.24.03.FrmMathDoubleTee.xaml.cs">
+      <DependentUpon>TVD.24.03.FrmMathDoubleTee.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TVD.24.02.MathWarpedDoubletee.cs" />
+    <Compile Include="TVD.24.01.MathWarpedDoubleteecmd.cs" />
+    <Compile Include="TVD.23.05.FrmReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TVD.23.05.FrmReport.Designer.cs">
+      <DependentUpon>TVD.23.05.FrmReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TVD.23.04.FrmCheckClashProduct_1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TVD.23.04.FrmCheckClashProduct_1.Designer.cs">
+      <DependentUpon>TVD.23.04.FrmCheckClashProduct_1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TVD.23.03.CheckClashProductEvent.cs" />
+    <Compile Include="TVD.23.02.CheckClashProduct.cs" />
+    <Compile Include="TVD.23.01.CheckClashProductcmd.cs" />
+    <Compile Include="TVD.22.04.FrmAutodimelement.xaml.cs">
+      <DependentUpon>TVD.22.04.FrmAutodimelement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TVD.22.03.AutodimElementEvent.cs" />
+    <Compile Include="TVD.22.01.AutodimElementcmd.cs" />
+    <Compile Include="TVD.22.02.AutodimElement.cs" />
+    <Compile Include="TVD.21.03.FrmCreateGrid.xaml.cs">
+      <DependentUpon>TVD.21.03.FrmCreateGrid.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TVD.18.02.FrmDimgrid.xaml.cs">
+      <DependentUpon>TVD.18.02.FrmDimgrid.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TVD.19.02.FrmAddValue.xaml.cs">
+      <DependentUpon>TVD.19.02.FrmAddValue.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TVD.18.01.Dimgridcmd.cs" />
+    <Compile Include="ChangeFamilyDTcmd.cs" />
+    <Compile Include="Checkfamilynameandcontrolmark.cmd.cs" />
+    <Compile Include="Frm.ChangeWorkPlane.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm.ChangeWorkPlane.designer.cs">
+      <DependentUpon>Frm.ChangeWorkPlane.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAddsurfixsheet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAddsurfixsheet.designer.cs">
+      <DependentUpon>FrmAddsurfixsheet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TVD.14.03.FrmPlaceSymbolonGravity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TVD.14.03.FrmPlaceSymbolonGravity.Designer.cs">
+      <DependentUpon>TVD.14.03.FrmPlaceSymbolonGravity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TVD.14.02.FrmPlaceSymbolGravity.xaml.cs">
+      <DependentUpon>TVD.14.02.FrmPlaceSymbolGravity.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TVD.11.03.FrmBrickDim.xaml.cs">
+      <DependentUpon>TVD.11.03.FrmBrickDim.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCheck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCheck.designer.cs">
+      <DependentUpon>FrmCheck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCheckNameAndControlMark.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCheckNameAndControlMark.designer.cs">
+      <DependentUpon>FrmCheckNameAndControlMark.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCopyConn_Dt_To_Dt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCopyConn_Dt_To_Dt.designer.cs">
+      <DependentUpon>FrmCopyConn_Dt_To_Dt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCopyReforcement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCopyReforcement.designer.cs">
+      <DependentUpon>FrmCopyReforcement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCopyReforcementNotMark.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCopyReforcementNotMark.designer.cs">
+      <DependentUpon>FrmCopyReforcementNotMark.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmModify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmModify.designer.cs">
+      <DependentUpon>FrmModify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRenameSheet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRenameSheet.designer.cs">
+      <DependentUpon>FrmRenameSheet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSaveDetach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSaveDetach.designer.cs">
+      <DependentUpon>FrmSaveDetach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Insulationlbr.cs" />
+    <Compile Include="InsulationSupport.cs" />
+    <Compile Include="Interference Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interference Report.designer.cs">
+      <DependentUpon>Interference Report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="lbr_.cs" />
+    <Compile Include="ProgressBarform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProgressBarform.designer.cs">
+      <DependentUpon>ProgressBarform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="T. Switchgrid2d3dcmd.cs" />
+    <Compile Include="T. SetSketplanebyline.cs" />
+    <Compile Include="T.AddParameterFamily.cs" />
+    <Compile Include="T.Addsurfixsheetcmd.cs" />
+    <Compile Include="TVD.19.01.AddvaluecontrolMark.cs" />
+    <Compile Include="T.AutoDimpartscmd.cs" />
+    <Compile Include="T.CheckIntersect.cs" />
+    <Compile Include="T.CopyConnectionDTcmd.cs" />
+    <Compile Include="T.CopyConnectionFlangeDTcmd.cs" />
+    <Compile Include="T.CopyConnectionFlatToWarped.cs" />
+    <Compile Include="T.CopyReforcement.cs" />
+    <Compile Include="T.CopyReforcementNotMark.cs" />
+    <Compile Include="T.CreateDimentioncmd.cs" />
+    <Compile Include="T.DuplicateViewSheet.cs" />
+    <Compile Include="Ultis\ConstructorSingleton.cs" />
+    <Compile Include="Ultis\DimensionShapeForm.cs" />
+    <Compile Include="Ultis\DoubleExtension.cs" />
+    <Compile Include="Ultis\ElementtransformToCopy.cs" />
+    <Compile Include="T.EventTVD.cs" />
+    <Compile Include="T.FindViewReferencecmd.cs" />
+    <Compile Include="TVD.21.02.CreateGrid.cs" />
+    <Compile Include="TVD.21.01.CreateGridcmd.cs" />
+    <Compile Include="TVD.20.02.FreezeView.cs" />
+    <Compile Include="TVD.20.01.FreezeViewcmd.cs" />
+    <Compile Include="T.Insulation.cs" />
+    <Compile Include="T.Intersect_Report_Event.cs" />
+    <Compile Include="T.lbr.cs" />
+    <Compile Include="T.lbr_view.cs" />
+    <Compile Include="T.MoveFrame.cs" />
+    <Compile Include="T.Pin2D.cs" />
+    <Compile Include="TVD.14.01.PlaceSymbolongravityofface.cs" />
+    <Compile Include="T.ProgressiveValueTextnotecmd.cs" />
+    <Compile Include="T.RemoveWorkPlane.cs" />
+    <Compile Include="T.RenameSheet.cs" />
+    <Compile Include="T.RenameViewport.cs" />
+    <Compile Include="T.Respacedim.cs" />
+    <Compile Include="T.SaveDetach.cs" />
+    <Compile Include="T.SaveDetachFile.cs" />
+    <Compile Include="TVD.15.01.SelectByControlMark.cs" />
+    <Compile Include="T.Selectionceg.cs" />
+    <Compile Include="T.TransferView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="T.TransferView.designer.cs">
+      <DependentUpon>T.TransferView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="T.Transfer_view.cs" />
+    <Compile Include="T.UnPin2D.cs" />
+    <Compile Include="TVD.01.01.CheckWorkPlanecmd.cs" />
+    <Compile Include="TVD.01.02.CheckWorkPlaneEvent.cs" />
+    <Compile Include="TVD.01.03.FrmShowRefernceplane.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TVD.01.03.FrmShowRefernceplane.designer.cs">
+      <DependentUpon>TVD.01.03.FrmShowRefernceplane.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TVD.01.04.FrmCheckReference.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TVD.01.04.FrmCheckReference.designer.cs">
+      <DependentUpon>TVD.01.04.FrmCheckReference.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TVD.02.01.CreateAssemblyGrand.cs" />
+    <Compile Include="TVD.02.01.CreateAssemblyGrand_SUP.cs" />
+    <Compile Include="TVD.03.01.CopyReforcementGrand.cs" />
+    <Compile Include="TVD.03.02.ElementtransformforGrand.cs" />
+    <Compile Include="TVD.03.02.FrmCopyReforcementGrand.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TVD.03.02.FrmCopyReforcementGrand.designer.cs">
+      <DependentUpon>TVD.03.02.FrmCopyReforcementGrand.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TVD.04.01.DetailRebarcmd.cs" />
+    <Compile Include="TVD.04.02.DetailRebar.cs" />
+    <Compile Include="TVD.06.01.CopyModelcmd.cs" />
+    <Compile Include="TVD.06.02.CopyModel.cs" />
+    <Compile Include="TVD.06.03.FrmCopyModel.xaml.cs">
+      <DependentUpon>TVD.06.03.FrmCopyModel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TVD.07.01.CheckHssconflictcmd.cs" />
+    <Compile Include="TVD.07.02.CheckHssconflict.cs" />
+    <Compile Include="TVD.08.01.ChangeCategoryfamilycmd.cs" />
+    <Compile Include="TVD.08.02.ChangeCategoryfamily.cs" />
+    <Compile Include="TVD.08.03FrmChangeCategoryFamily.xaml.cs">
+      <DependentUpon>TVD.08.03FrmChangeCategoryFamily.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TVD.09.01.MergeTextcmd.cs" />
+    <Compile Include="TVD.09.02.MergeText.cs" />
+    <Compile Include="TVD.09.03.MergeTextEvent.cs" />
+    <Compile Include="TVD.09.04.FrmMergeText.xaml.cs">
+      <DependentUpon>TVD.09.04.FrmMergeText.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TVD.10.01.SelectbyControlMarkcmd.cs" />
+    <Compile Include="TVD.11.01.DimBrickcmd.cs" />
+    <Compile Include="TVD.11.02.DimBrick.cs" />
+    <Compile Include="TVD.11.04.DimBrickEvent.cs" />
+    <Compile Include="TVD.13.01.FindElementonWhereSheetcmd.cs" />
+    <Compile Include="TVD.13.02.FindElementonWhereSheet.cs" />
+    <Compile Include="TVD.13.03.FrmFindElementonwhereSheet.xaml.cs">
+      <DependentUpon>TVD.13.03.FrmFindElementonwhereSheet.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TVDSettting.cs" />
+    <Compile Include="Ultis\CurveHelper.cs" />
+    <Compile Include="Ultis\DoubleUtils.cs" />
+    <Compile Include="Ultis\ElemExtensions.cs" />
+    <Compile Include="Ultis\EventRegisterHandler.cs" />
+    <Compile Include="Ultis\Facelibry.cs" />
+    <Compile Include="Ultis\FaceUtils.cs" />
+    <Compile Include="Ultis\FamilyInstanceUtils.cs" />
+    <Compile Include="Ultis\GeometryHelper.cs" />
+    <Compile Include="Ultis\GetProduct.cs" />
+    <Compile Include="Ultis\IController.cs" />
+    <Compile Include="Ultis\MathHelper.cs" />
+    <Compile Include="Ultis\MathLib.cs" />
+    <Compile Include="Ultis\MyEnum.cs" />
+    <Compile Include="Ultis\ParamterUtils.cs" />
+    <Compile Include="Ultis\Plane3D.cs" />
+    <Compile Include="Ultis\PlaneHelper.cs" />
+    <Compile Include="Ultis\ReinforcementUtils.cs" />
+    <Compile Include="Ultis\Rounding.cs" />
+    <Compile Include="Ultis\RvtController.cs" />
+    <Compile Include="Ultis\SelectionFilter.cs" />
+    <Compile Include="Ultis\SelectionUtils.cs" />
+    <Compile Include="Ultis\SettingExtension.cs" />
+    <Compile Include="Ultis\Getmodelelement.cs" />
+    <Compile Include="Ultis\Stringhelper.cs" />
+    <Compile Include="Ultis\TeeParamters.cs" />
+    <Compile Include="Ultis\UnitConvert.cs" />
+    <Compile Include="Ultis\Util.cs" />
+    <Compile Include="Ultis\UVhelper.cs" />
+    <Compile Include="Ultis\ViewSheethelper.cs" />
+    <Compile Include="Ultis\View3DUtils .cs" />
+    <Compile Include="Ultis\Solidhelper.cs" />
+    <Compile Include="Ultis\ViewUtils.cs" />
+    <Compile Include="Ultis\PlanarfaceHelper.cs" />
+    <Compile Include="Ultis\WpfCoordinates.cs" />
+    <Compile Include="Ultis\XYZHelper.cs" />
+    <Compile Include="WPF\ChangeFamilyDT.xaml.cs">
+      <DependentUpon>ChangeFamilyDT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\FrmAddprefixsheetWPF.xaml.cs">
+      <DependentUpon>FrmAddprefixsheetWPF.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\FrmRenamesheet.xaml.cs">
+      <DependentUpon>FrmRenamesheet.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\FrmRespacedim.xaml.cs">
+      <DependentUpon>FrmRespacedim.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\FrmSelectByMark.xaml.cs">
+      <DependentUpon>FrmSelectByMark.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\ProgressbarWPF.xaml.cs">
+      <DependentUpon>ProgressbarWPF.xaml</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ExtensionTool\Ex.05.03.FrmCheckdetailnamewithconection.resx">
+      <DependentUpon>Ex.05.03.FrmCheckdetailnamewithconection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm.ChangeWorkPlane.resx">
+      <DependentUpon>Frm.ChangeWorkPlane.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAddsurfixsheet.resx">
+      <DependentUpon>FrmAddsurfixsheet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExtensionTool\Ex.04.02.FrmAddvalueParameter.resx">
+      <DependentUpon>Ex.04.02.FrmAddvalueParameter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TVD.27.03.FrmCutvoidbytypes.resx">
+      <DependentUpon>TVD.27.03.FrmCutvoidbytypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TVD.55.03.FrmAlignRebar.resx">
+      <DependentUpon>TVD.55.03.FrmAlignRebar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCheck.resx">
+      <DependentUpon>FrmCheck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCheckNameAndControlMark.resx">
+      <DependentUpon>FrmCheckNameAndControlMark.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCopyConn_Dt_To_Dt.resx">
+      <DependentUpon>FrmCopyConn_Dt_To_Dt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCopyReforcement.resx">
+      <DependentUpon>FrmCopyReforcement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCopyReforcementNotMark.resx">
+      <DependentUpon>FrmCopyReforcementNotMark.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="legendmanager\LegendManagerForm.resx">
+      <DependentUpon>LegendManagerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="legendmanager\TeeWarpForm.resx">
+      <DependentUpon>TeeWarpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExtensionTool\Ex.01.02.FrmTransferValueParameter.resx">
+      <DependentUpon>Ex.01.02.FrmTransferValueParameter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExtensionTool\Ex.02.03.frmFindSheetContainLegend.resx">
+      <DependentUpon>Ex.02.03.frmFindSheetContainLegend.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TVD.30.03.FrmCutVoidConnection.resx">
+      <DependentUpon>TVD.30.03.FrmCutVoidConnection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmModify.resx">
+      <DependentUpon>FrmModify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRenameSheet.resx">
+      <DependentUpon>FrmRenameSheet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSaveDetach.resx">
+      <DependentUpon>FrmSaveDetach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interference Report.resx">
+      <DependentUpon>Interference Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProgressBarform.resx">
+      <DependentUpon>ProgressBarform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="T.TransferView.resx">
+      <DependentUpon>T.TransferView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TVD.01.03.FrmShowRefernceplane.resx">
+      <DependentUpon>TVD.01.03.FrmShowRefernceplane.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TVD.01.04.FrmCheckReference.resx">
+      <DependentUpon>TVD.01.04.FrmCheckReference.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TVD.03.02.FrmCopyReforcementGrand.resx">
+      <DependentUpon>TVD.03.02.FrmCopyReforcementGrand.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TVD.14.03.FrmPlaceSymbolonGravity.resx">
+      <DependentUpon>TVD.14.03.FrmPlaceSymbolonGravity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TVD.23.04.FrmCheckClashProduct_1.resx">
+      <DependentUpon>TVD.23.04.FrmCheckClashProduct_1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TVD.23.05.FrmReport.resx">
+      <DependentUpon>TVD.23.05.FrmReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TVD.41.03.FrmHideElementbyworkplaneandlevel.resx">
+      <DependentUpon>TVD.41.03.FrmHideElementbyworkplaneandlevel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TVD.47.03.FrmManagerSection.resx">
+      <DependentUpon>TVD.47.03.FrmManagerSection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TVD.47.04.FrmSetting.resx">
+      <DependentUpon>TVD.47.04.FrmSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TVD.49.02.FrmFilterCustom.resx">
+      <DependentUpon>TVD.49.02.FrmFilterCustom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TVD.53.03.FrmSetValueTemplateSheet.resx">
+      <DependentUpon>TVD.53.03.FrmSetValueTemplateSheet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TVD.57.03.FrmCheckControlNumber.resx">
+      <DependentUpon>TVD.57.03.FrmCheckControlNumber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TVD.57.05.FrmIncrease.resx">
+      <DependentUpon>TVD.57.05.FrmIncrease.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TVD.58.02.FrmCheckElementWorkshare.resx">
+      <DependentUpon>TVD.58.02.FrmCheckElementWorkshare.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TVD.60.03.FrmCheckpartdraw.resx">
+      <DependentUpon>TVD.60.03.FrmCheckpartdraw.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="TVDCEG.addin" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="AddViewsToSheetForm.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\Material.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TVD.44.02.FrmAddvalueonsheet.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TVD.44.02.FrmMathGridView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TVD.43.02.FrmTopDT.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TVD.38.02.FrmOpenmultisheet.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TVD.37.02.FrmTransferviewtemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TVD.33.03.FrmGridandlevelbuble.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TVD.32.02.FrmAddValueAssembly.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TVD.31.03.FrmProductonlevel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TVD.26.03.FrmExportRebar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TVD.25.03.FrmSelectTextinView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TVD.24.03.FrmMathDoubleTee.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TVD.22.04.FrmAutodimelement.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TVD.21.03.FrmCreateGrid.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TVD.18.02.FrmDimgrid.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TVD.19.02.FrmAddValue.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TVD.14.02.FrmPlaceSymbolGravity.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TVD.11.03.FrmBrickDim.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\ButtonStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\CheckBoxStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\ComboBoxStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\DatagridStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\GroupBoxStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\ProgessBarStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\RadiobuttonStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\Style.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\TextBoxStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TVD.06.03.FrmCopyModel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TVD.08.03FrmChangeCategoryFamily.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TVD.09.04.FrmMergeText.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TVD.13.03.FrmFindElementonwhereSheet.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WPF\ChangeFamilyDT.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WPF\FrmAddprefixsheetWPF.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WPF\FrmRenamesheet.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WPF\FrmRespacedim.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WPF\FrmSelectByMark.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WPF\ProgressbarWPF.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\addsufix.png" />
+    <Resource Include="Resources\arrow_down.bmp" />
+    <Resource Include="Resources\CEG.ico" />
+    <Resource Include="Resources\copyrefocing.png" />
+    <Resource Include="Resources\Custom.png" />
+    <Resource Include="Resources\Entypo_f315%280%29.ico" />
+    <Resource Include="Resources\grid2d.png" />
+    <Resource Include="Resources\iconPROS.png" />
+    <Resource Include="Resources\Intersec.png" />
+    <Resource Include="Resources\pin2d.png" />
+    <Resource Include="Resources\Renamesheet.png" />
+    <Resource Include="Resources\savedetach.png" />
+    <Resource Include="Resources\selc1.png" />
+    <Resource Include="Resources\selectiongr.png" />
+    <Resource Include="Resources\transferview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\update.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Setworkplane.png" />
+    <Resource Include="Resources\Strand.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Mergetext.png" />
+    <Resource Include="Resources\Opensheet.png" />
+    <Resource Include="Resources\Transferviewtemplate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MatchWapredDT.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Cutvoid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Image1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TEE WARP.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ExtendRebar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Revit.ico" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="..\packages\MaterialDesignThemes.3.1.3\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.3.1.3\build\MaterialDesignThemes.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\MaterialDesignThemes.3.1.3\build\MaterialDesignThemes.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MaterialDesignThemes.3.1.3\build\MaterialDesignThemes.targets'))" />
+  </Target>
+</Project>

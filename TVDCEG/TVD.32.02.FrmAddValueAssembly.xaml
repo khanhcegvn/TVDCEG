@@ -1,0 +1,31 @@
+﻿<Window x:Class="TVDCEG.FrmAddValueAssembly"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TVDCEG"
+        mc:Ignorable="d"
+        Loaded="Window_Loaded"
+        Title="Iven EXT: Add Value" Height="500" Width="300" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <ResourceDictionary Source="Style/Style.xaml"></ResourceDictionary>
+    </Window.Resources>
+    <DockPanel>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="10"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label Content="Parameter" Height="30" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Left"></Label>
+            <Label Content="Search:" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left"></Label>
+            <TextBox x:Name="txt_search" Grid.Row="1" HorizontalAlignment="Right" Width="200" Height="24" Margin="0,5,4,5" TextChanged="txt_search_TextChanged"></TextBox>
+            <ComboBox Name="cbb_Parameter" Width="200" Height="24" HorizontalAlignment="Right" Grid.Row="0" Style="{StaticResource ComboBoxStyle}" ItemsSource="{Binding dicpa}" DisplayMemberPath="Key"></ComboBox>
+            <ListBox x:Name="lb_viewassembly" Grid.Row="2" Width="290" SelectionMode="Extended"></ListBox>
+            <CheckBox x:Name="ckb_All" Content="All" Grid.Row="4" VerticalAlignment="Center" Margin="11,11,224,14"></CheckBox>
+            <Button x:Name="btn_OK" Content="OK" Grid.Row="4" Height="25" Style="{StaticResource ButtonStyle}" Click="btn_OK_Click" Margin="155,6,23,9"/>
+        </Grid>
+    </DockPanel>
+</Window>

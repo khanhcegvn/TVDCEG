@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>Application TVDCEG</Name>
+    <Assembly>C:\ProgramData\Autodesk\ApplicationPlugins\TVD\TVDCEG.dll</Assembly>
+    <FullClassName>TVDCEG.App</FullClassName>
+    <ClientId>4997a769-9dcd-4736-8e26-87b9c14f1721</ClientId>
+    <VendorId>TVDCEG</VendorId>
+    <VendorDescription>toan1106@gmail.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

@@ -1,0 +1,70 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style x:Key="ProgressBarStyle" TargetType="{x:Type ProgressBar}">
+        <Setter Property="Control.Foreground" Value="YellowGreen"/>
+        <Setter Property="Control.Background" Value="#EEEEEE"/>
+        <Setter Property="Control.BorderThickness" Value="0"/>
+        <Setter Property="Control.IsTabStop" Value="false"/>
+        <Setter Property="Control.BorderBrush">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint=".5,1" StartPoint=".5,0">
+                    <GradientStop Color="#FFAEB7BF" Offset="0"/>
+                    <GradientStop Color="#FF919EA7" Offset="0.35"/>
+                    <GradientStop Color="#FF7A8A99" Offset="0.35"/>
+                    <GradientStop Color="#FF647480" Offset="1"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ProgressBar}">
+                    <Grid Name="TemplateRoot" SnapsToDevicePixels="true">
+                        <Rectangle Fill="{TemplateBinding Control.Background}"/>
+                        <Rectangle Name="PART_Track" Margin="0"/>
+                        <Decorator x:Name="PART_Indicator" HorizontalAlignment="Left" Margin="0">
+                            <Grid Name="Foreground">
+                                <Rectangle Name="Indicator" Fill="{TemplateBinding Control.Foreground}"/>
+                                <Grid x:Name="Animation" ClipToBounds="true" Visibility="Hidden">
+                                    <Rectangle Name="HiderPre" Fill="{TemplateBinding Control.Background}" Margin="0,0,50,0">
+                                        <UIElement.RenderTransform>
+                                            <ScaleTransform x:Name="HiderPreTransform" ScaleX="0"/>
+                                        </UIElement.RenderTransform>
+                                    </Rectangle>
+                                    <Rectangle Name="HiderPost" Fill="{TemplateBinding Control.Background}" RenderTransformOrigin="1, 0"
+                             Margin="50,0,0,0">
+                                        <UIElement.RenderTransform>
+                                            <ScaleTransform x:Name="HiderPostTransform" ScaleX="1"/>
+                                        </UIElement.RenderTransform>
+                                    </Rectangle>
+                                </Grid>
+                                <Grid Name="Overlay"/>
+                            </Grid>
+                        </Decorator>
+                        <Border BorderThickness="{TemplateBinding Control.BorderThickness}"
+                    BorderBrush="{TemplateBinding Control.BorderBrush}"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="ProgressBar.IsIndeterminate" Value="true">
+                            <Setter TargetName="Animation" Property="UIElement.Visibility" Value="Visible"/>
+                            <TriggerBase.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard RepeatBehavior="Forever">
+                                        <DoubleAnimation Storyboard.TargetName="HiderPreTransform" Storyboard.TargetProperty="(ScaleTransform.ScaleX)"
+                                     To="1" Duration="0:00:4" AutoReverse="true"/>
+                                        <DoubleAnimation Storyboard.TargetName="HiderPostTransform" Storyboard.TargetProperty="(ScaleTransform.ScaleX)"
+                                     To="0" Duration="0:00:4" AutoReverse="true"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </TriggerBase.EnterActions>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="UIElement.IsEnabled" Value="false">
+                <Setter Property="Control.Foreground" Value="Gray"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+</ResourceDictionary>

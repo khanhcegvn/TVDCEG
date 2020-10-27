@@ -1,0 +1,70 @@
+﻿<Window x:Class="TVDCEG.FrmCreateGrid"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TVDCEG"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Loaded="Window_Loaded"
+        Title="Iven EXT: Create Grid" Height="500" Width="600">
+    <Window.Resources>
+        <ResourceDictionary Source="Style/Style.xaml"></ResourceDictionary>
+    </Window.Resources>
+    <DockPanel>
+        <DockPanel DockPanel.Dock="Top" Height="410">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <DockPanel DockPanel.Dock="Left" Grid.Column="0">
+                    <DockPanel DockPanel.Dock="Top" Height="150">
+                        <GroupBox Header="Options axis X" Height="420" VerticalAlignment="Center" Margin="0,-132,0,-138">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="50"></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Label Content="Name Grid:" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center"></Label>
+                                <TextBox x:Name="txt_NameGridX" Grid.Column="1" Grid.Row="0" Height="26" VerticalAlignment="Center" Width="150" HorizontalAlignment="Right" FontSize="15"></TextBox>
+                                <DataGrid x:Name="data_axisX" Grid.Row="1" CanUserAddRows="True" AutoGenerateColumns="False" RowHeaderWidth="0">
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn Header="Space" Width="*" Binding="{Binding space, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                                        <DataGridTextColumn Header="Count" Width="*" Binding="{Binding number,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </Grid>
+                        </GroupBox>
+                    </DockPanel>
+                </DockPanel>
+                <DockPanel DockPanel.Dock="Right" Grid.Column="1">
+                    <DockPanel DockPanel.Dock="Top" Height="150">
+                        <GroupBox Header="Options axis Y" Margin="0,-132,0,-138">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="50"></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Label Content="Name Grid:" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center"></Label>
+                                <TextBox x:Name="txt_NameGridY" Grid.Column="1" Grid.Row="0" Height="26" VerticalAlignment="Center" Width="150" HorizontalAlignment="Right" FontSize="15"></TextBox>
+                                <DataGrid x:Name="data_axisY" Grid.Row="1" CanUserAddRows="True" AutoGenerateColumns="False" RowHeaderWidth="0">
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn Header="Space" Width="*" Binding="{Binding space, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                                        <DataGridTextColumn Header="Count" Width="*" Binding="{Binding number,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </Grid>
+                        </GroupBox>
+                    </DockPanel>
+                </DockPanel>
+            </Grid>
+        </DockPanel>
+        <DockPanel DockPanel.Dock="Bottom" Height="40">
+            <DockPanel DockPanel.Dock="Bottom" LastChildFill="False" HorizontalAlignment="Center">
+                <Button x:Name="btn_Ok" Content="Ok" Width="120" Style="{StaticResource ButtonStyle}" Click="btn_Ok_Click"></Button>
+                <Button x:Name="btn_Cancel" Content="Cancel" Width="120" Style="{StaticResource ButtonStyle}"></Button>
+            </DockPanel>
+        </DockPanel>
+    </DockPanel>
+</Window>

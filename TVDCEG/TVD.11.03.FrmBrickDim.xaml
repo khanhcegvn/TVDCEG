@@ -1,0 +1,49 @@
+﻿<Window x:Class="TVDCEG.FrmBrickDim"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TVDCEG"
+        mc:Ignorable="d"
+        Loaded="Window_Loaded"
+        Closed="Window_Closed"
+        Title="Iven EXT: Brick Dim" Height="310" Width="600" WindowStartupLocation="CenterScreen" Topmost="True" ResizeMode="NoResize">
+    <Window.Resources>
+        <ResourceDictionary Source="Style/Style.xaml"></ResourceDictionary>
+    </Window.Resources>
+    <DockPanel>
+        <DockPanel DockPanel.Dock="Top" Height="210">
+            <GroupBox Header="Options" Background="#FFEFF0D9" BorderThickness="2">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <RadioButton x:Name="Rbtn_Vertical" Content="Vertical" Grid.Row="0" Grid.Column="0" Style="{StaticResource RadioButtonStyle}" HorizontalAlignment="Left" Checked="Rbtn_Vertical_Checked" VerticalAlignment="Center"></RadioButton>
+                    <ComboBox Name="cbb_dimtypevertical" Width="150" Height="25" Grid.Column="0" Grid.Row="1" Margin="67,10,70,10" Style="{StaticResource ComboBoxStyle}" BorderThickness="2"></ComboBox>
+                    <TextBlock x:Name="textblock_dimtypevertical" Text="Dim type:" Grid.Column="0" Grid.Row="1"></TextBlock>
+                    <CheckBox x:Name="checkbox_Showrow" Content="Show Row Dim" Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Left" Style="{StaticResource CheckBoxStyle}" Checked="checkbox_Showrow_Checked" Unchecked="checkbox_Showrow_Unchecked"></CheckBox>
+                    <RadioButton x:Name="Rbtn_Holizontal" Content="Holizontal" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" Style="{StaticResource RadioButtonStyle}" Checked="Rbtn_Holizontal_Checked" Margin="0,18,30,7" VerticalAlignment="Center"></RadioButton>
+                    <TextBox x:Name="txt_CountRow" Grid.Row="1" Width="100" Height="25" Grid.Column="1" HorizontalAlignment="Right" FontSize="13" Margin="0,9,8,9"/>
+                    <ComboBox Name="cbb_dimtypeholizontal1" Width="150" Height="26" Grid.Column="1" Grid.Row="2" Margin="129,10,8,10" VerticalAlignment="Center" Style="{StaticResource ComboBoxStyle}" BorderThickness="2"></ComboBox>
+                    <ComboBox Name="cbb_dimtypeholizontal2" Width="150" Height="25" Grid.Column="1" Grid.Row="3" Margin="129,10,8,10" VerticalAlignment="Center" Style="{StaticResource ComboBoxStyle}" BorderThickness="2"></ComboBox>
+                    <TextBlock x:Name="textblock_space" Text="Space:" Grid.Row="1" HorizontalAlignment="Right" Grid.Column="1" Margin="0,14,114,10" Width="40" Height="20"></TextBlock>
+                    <TextBlock x:Name="textblock_dimtype1" Text="Dim type 1:" Grid.Row="2" Grid.Column="1" Margin="57,15,0,15"></TextBlock>
+                    <TextBlock x:Name="textblock_dimtype2" Text="Dim type 2:" Grid.Row="3" Grid.Column="1" Margin="57,14,0,15"></TextBlock>
+                </Grid>
+            </GroupBox>
+        </DockPanel>
+        <DockPanel DockPanel.Dock="Bottom" Height="50" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+            <CheckBox x:Name="ckc_switch" Content="Switch" VerticalAlignment="Center" HorizontalAlignment="Left" Width="78" Style="{StaticResource CheckBoxStyle}"></CheckBox>
+            <Button x:Name="btn_Pick" Content="Pick" Width="120" Height="30" Style="{StaticResource ButtonStyle}" Click="btn_Pick_Click" Margin="3,10"/>
+            <Button x:Name="btn_SaveSetting" Content="Save Setting" Width="120" Height="30" Style="{StaticResource ButtonStyle}" Margin="3,10" Click="btn_SaveSetting_Click"/>
+            <Button x:Name="btn_Close" Content="Close" Width="120" Height="30" Style="{StaticResource ButtonStyle}" Margin="3,10" Click="btn_Close_Click"/>
+        </DockPanel>
+    </DockPanel>
+</Window>

@@ -1,0 +1,35 @@
+﻿<Window x:Class="TVDCEG.FrmMathDoubleTee"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TVDCEG"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen"
+        Title="Iven EXT: Math Warped Double_Tee" Height="500" Width="410">
+    <Window.Resources>
+        <ResourceDictionary Source="Style/Style.xaml"></ResourceDictionary>
+    </Window.Resources>
+    <DockPanel>
+        <DockPanel DockPanel.Dock="Top" Height="400">
+            <GroupBox Header="Options">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Label Content="From:" Grid.Row="0"></Label>
+                    <ComboBox Name="from_dt" Grid.Row="1" Height="30" Style="{StaticResource ComboBoxStyle}" SelectionChanged="from_dt_SelectionChanged"></ComboBox>
+                    <Label Content="To:" Grid.Row="2"></Label>
+                    <ListBox x:Name="lb_show" Grid.Row="3" SelectionMode="Extended"></ListBox>
+                </Grid>
+            </GroupBox>
+        </DockPanel>
+        <DockPanel DockPanel.Dock="Bottom" LastChildFill="False" HorizontalAlignment="Right">
+            <Button x:Name="btn_Ok" Content="Ok" Width="120" Style="{StaticResource ButtonStyle}" Click="btn_Ok_Click"></Button>
+            <Button x:Name="btn_Cancel" Content="Cancel" Width="120" Style="{StaticResource ButtonStyle}" Click="btn_Cancel_Click"></Button>
+            <Button x:Name="btn_Select" Content="Select" Width="120" Style="{StaticResource ButtonStyle}" Click="btn_Select_Click"></Button>
+        </DockPanel>
+    </DockPanel>
+</Window>

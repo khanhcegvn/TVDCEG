@@ -1,0 +1,33 @@
+﻿<Window x:Name="Progressbar_wpf" x:Class="TVDCEG.ProgressbarWPF"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:TVDCEG"
+             Loaded="Progressbar_Loaded"
+             mc:Ignorable="d" 
+             ResizeMode="CanMinimize"
+             WindowStartupLocation="CenterScreen"
+             Title="Iven EXT: ProgressBarWPF" Height="143" Width="640" Background="White">
+    <FrameworkElement.Resources>
+        <ResourceDictionary Source="..//Style/Style.xaml"></ResourceDictionary>
+    </FrameworkElement.Resources>
+    <DockPanel x:Name="MainGrid">
+        <DockPanel DockPanel.Dock="Top">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <TextBlock x:Name="_topmessagre" Text="adc" FontSize="14" Grid.Row="0"></TextBlock>
+                <TextBlock x:Name="sodem" Text="So" FontSize="13" Foreground="#FF000E04" RenderTransformOrigin="18,10" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <ProgressBar x:Name="ProgressBar_wpf" Height="25" Background="{x:Null}" BorderBrush="#7F24E28C" Foreground="#4C089FAE" Grid.Row="1"/>
+            </Grid>
+        </DockPanel>
+        <DockPanel DockPanel.Dock="Bottom" HorizontalAlignment="Right">
+            <Button Content="Abort" Name="Btn_Abort" Width="60" Height="25" Click="Btn_Abort_Click" Style="{StaticResource ButtonStyle}"/>
+            <Button Content="Cancel" Name="Btn_Cancel" Width="60" Height="25" Click="Btn_Cancel_Click" Style="{StaticResource ButtonStyle}"/>
+        </DockPanel>
+    </DockPanel>
+</Window>

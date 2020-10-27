@@ -1,0 +1,51 @@
+﻿<Window x:Class="TVDCEG.FrmTopDT"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TVDCEG"
+        mc:Ignorable="d"
+        Loaded="Window_Loaded" WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
+        Title="Iven EXT: Add Text Top Finish" Height="270" Width="300">
+    <Window.Resources>
+        <ResourceDictionary Source="Style/Material.xaml"></ResourceDictionary>
+    </Window.Resources>
+    <DockPanel>
+        <DockPanel DockPanel.Dock="Top" Height="180">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="25*"></ColumnDefinition>
+                    <ColumnDefinition Width="73*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <TextBlock Text="Suffix:" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                <TextBlock Text="Prefix:" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                <TextBlock Text="TextNotes:" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                <ComboBox Name="cbb_textNotes" Grid.Column="1" Grid.Row="2"  Width="201"></ComboBox>
+                <TextBox x:Name="txt_suffix" Grid.Row="0" Grid.Column="1" Width="200" HorizontalAlignment="Right"  Margin="0,4,6,4"/>
+                <TextBox x:Name="txt_Prefix" Grid.Row="1" Grid.Column="1" Width="200" HorizontalAlignment="Right"  Margin="0,4,6,4"/>
+                <TextBox x:Name="txt_val" Grid.Row="3" Grid.Column="1" Width="200" HorizontalAlignment="Right" LostFocus="txt_val_LostFocus" Margin="0,4,6,4"/>
+                <TextBox x:Name="txt_tru" Grid.Row="4" Grid.Column="1" Width="200" HorizontalAlignment="Right" LostFocus="txt_tru_LostFocus" Margin="0,4,6,4"/>
+                <Button  Width="50" Grid.Column="0" Grid.Row="3"></Button>
+                <Button  Width="50" Grid.Column="0" Grid.Row="4"></Button>
+            </Grid>
+        </DockPanel>
+        <DockPanel DockPanel.Dock="Bottom" HorizontalAlignment="Right" Width="254">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+            </Grid>
+            <Button Height="30" Grid.Column="0" Grid.Row="3" Width="120" Name="btOk" Content="OK" Click="btOk_Click"></Button>
+            <Button Height="30" Grid.Column="1" Grid.Row="3" Width="120" Name="btcancel" Content="Cancel" Click="btcancel_Click"></Button>
+        </DockPanel>
+    </DockPanel>
+</Window>

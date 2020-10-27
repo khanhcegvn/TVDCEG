@@ -1,0 +1,31 @@
+﻿<Window x:Class="TVDCEG.FrmAutodimelement"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TVDCEG"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen" Topmost="True" ResizeMode="NoResize"
+        Loaded="Window_Loaded"
+        Title="Iven EXT: Auto Dimension" Height="220" Width="300">
+    <Window.Resources>
+        <ResourceDictionary Source="Style/Style.xaml"></ResourceDictionary>
+    </Window.Resources>
+    <DockPanel>
+        <DockPanel DockPanel.Dock="Top" Height="120">
+            <GroupBox Header="Options">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Label Content="Dim Type:"></Label>
+                    <ComboBox Name="cbb_Dimtype" Grid.Row="1" Height="30" Style="{StaticResource ComboBoxStyle}"></ComboBox>
+                </Grid>
+            </GroupBox>
+        </DockPanel>
+        <DockPanel DockPanel.Dock="Bottom" LastChildFill="False" HorizontalAlignment="Center">
+            <Button x:Name="btn_Ok" Content="Ok" Width="120" Style="{StaticResource ButtonStyle}" Click="btn_Ok_Click"></Button>
+            <Button x:Name="btn_Save" Content="Save" Width="120" Style="{StaticResource ButtonStyle}" Click="btn_Save_Click"></Button>
+        </DockPanel>
+    </DockPanel>
+</Window>
